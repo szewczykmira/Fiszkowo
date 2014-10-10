@@ -5,7 +5,7 @@ File created: 28/9/2014
 author: Mira Szewczyk <szewczyk.mira@gmail.com>
 """
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Category, Fiszka
 from .forms import CategoryForm, FiszkaForm
@@ -30,10 +30,11 @@ def add_category(request):
     :param request:
     :return:
     """
-    ret = {'form': FiszkaForm(request.POST or None)}
+    ret = {'form': CategoryForm(request.POST or None)}
 
     if request.method == 'POST' and ret['form'].is_valid():
         ret['form'].save()
+        redirect(home)
     return render(request, 'fiszki/add_category.html', ret)
 
 

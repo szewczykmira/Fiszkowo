@@ -1,1 +1,18 @@
 {% include 'fiszki/base.html' %}
+
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <form role="form" action="{% url 'add_category' %}" method="POST" class="navbar-form">
+        {% csrf_token %}
+        <div class="input-group">
+            {{ form.name }}
+            <div class="input-group-btn">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+
+        </form>
+    </div>
+    </div>
+{% endblock %}

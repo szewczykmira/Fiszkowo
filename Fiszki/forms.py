@@ -16,7 +16,7 @@ class CategoryForm(forms.ModelForm):
     """
 
     name = forms.CharField(label=_('Name'),
-                           widget=forms.TextInput(attrs={'placeholder': _('Name')}),
+                           widget=forms.TextInput(attrs={'placeholder': _('Name'), 'class':'form-control'}),
                            required=True)
 
     class Meta:
@@ -28,17 +28,19 @@ class FiszkaForm(forms.ModelForm):
     """
     # widget = forms.HiddenInput()
     name = forms.CharField(label=_('Name'),
-                           widget=forms.TextInput(attrs={'placeholder':_('Name')}),
+                           widget=forms.TextInput(attrs={'placeholder': _('Name'), 'class': 'form-control'}),
                            required=True)
     definition = forms.CharField(label=_('Definition'),
-                                 widget=forms.Textarea(attrs={'placeholder':_('Definition')}),
+                                 widget=forms.Textarea(attrs={'placeholder':_('Definition'),
+                                                              'class': 'form-control'}),
                                  required=True)
     is_known = forms.BooleanField(label=_('Is known'),
+                                  required=False,
                                   initial=False,
                                   widget=forms.HiddenInput())
     cat = forms.ModelChoiceField(label=_('Category'),
                                  required=False,
                                  queryset=(Category.objects.all()),
-                                 widget=forms.Select())
+                                 widget=forms.Select(attrs={'class': 'form-control'}))
     class Meta:
         model = Fiszka

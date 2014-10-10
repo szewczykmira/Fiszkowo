@@ -1,1 +1,16 @@
 {% include 'fiszki/base.html' %}
+
+{% block content %}
+    <div class="container">
+    <div class="">
+        <div class="jumbotron">
+            <div>
+  <h1>{{ fiszka.name }}</h1> <a class="btn btn-primary" role="button">Check answer</a></div>
+  <p>{{ fiszka.definition }}</p>
+  <p><a class="btn btn-success  btn-lg" role="button">I know it!</a>
+  <a class="btn btn-danger btn-lg" role="button">Next</a>
+  </p>
+</div>
+    </div>
+    </div>
+{% endblock %}
