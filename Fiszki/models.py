@@ -12,7 +12,7 @@ class Category(models.Model):
     """
     Category for every fiszka.
     """
-    name = models.CharField(max_length=70, verbose_name=_('Category'))
+    name = models.CharField(max_length=70, verbose_name=_('Category'), unique=True)
 
     def __unicode__(self):
         return self.name

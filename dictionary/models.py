@@ -15,5 +15,5 @@ class Article(models.Model):
     - article
     - definition
     """
-    article = models.CharField(verbose_name=_('Article'), max_length=100, required=True)
+    article = models.CharField(verbose_name=_('Article'), max_length=100, required=True, unique=True)
     definition = models.CharField(verbose_name=_('Definition'), max_length=300, required=True)
