@@ -6,6 +6,7 @@ author: Mira Szewczyk <szewczyk.mira@gmail.com>
 """
 
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.urlresolvers import reverse
 
 from .models import Category, Fiszka
 from .forms import CategoryForm, FiszkaForm
@@ -32,9 +33,10 @@ def add_category(request):
     """
     ret = {'form': CategoryForm(request.POST or None)}
 
-    if request.method == 'POST' and ret['form'].is_valid():
-        ret['form'].save()
-        redirect(home)
+    if request.method == 'POST':
+        if ret['form'].is_valid():
+            ret['form'].save()
+            return redirect(reverse('home'))
     return render(request, 'fiszki/add_category.html', ret)
 
 

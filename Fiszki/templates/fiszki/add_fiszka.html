@@ -1,6 +1,6 @@
-{% include 'fiszki/base.html' %}
+{% extends 'fiszki/base.html' %}
 
-{% block content %}
+{% block fiszka %}
     <div class="container">
     <form role="form" action="{% url 'add_fiszka' %}" method="POST">
         {% csrf_token %}
