@@ -1,8 +1,18 @@
-{% include 'base.html' %}
-{% block header %}
-    {{ super.super }}
+{% extends 'base.html' %}
+
+{% block links %}
+    Add links here!
 {% endblock %}
 
 {% block content %}
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome To Our Studio!</div>
+                <div class="intro-heading">It's Nice To Meet You</div>
+                <a href="#services" class="page-scroll btn btn-xl">What to do?</a>
+            </div>
+        </div>
+    </header>
 
 {% endblock %}
