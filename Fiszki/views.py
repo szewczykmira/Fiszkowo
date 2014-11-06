@@ -40,7 +40,7 @@ def add_category(request):
     return render(request, 'fiszki/add_category.html', ret)
 
 
-def edit_fiszka(request, fiszka_id=None):
+def edit_fiszka(request):
     """
     Function for adding or editing fiszka to app
     :param request:
@@ -48,9 +48,10 @@ def edit_fiszka(request, fiszka_id=None):
     """
     ret = {'form': FiszkaForm(request.POST or None)}
 
-    if request.method == 'POST' and ret['form'].is_valid():
-        ret['form'].save()
-
+    if request.method == 'POST':
+        if ret['form'].is_valid():
+            ret['form'].save()
+            return redirect(reverse('home'))
     return render(request, 'fiszki/add_fiszka.html', ret)
 
 

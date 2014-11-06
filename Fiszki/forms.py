@@ -26,13 +26,11 @@ class FiszkaForm(forms.ModelForm):
     """
     form for creating instance for fiszka class
     """
-    # widget = forms.HiddenInput()
     name = forms.CharField(label=_('Name'),
                            widget=forms.TextInput(attrs={'placeholder': _('Name'), 'class': 'form-control'}),
                            required=True)
     definition = forms.CharField(label=_('Definition'),
-                                 widget=forms.Textarea(attrs={'placeholder':_('Definition'),
-                                                              'class': 'form-control'}),
+                                 widget=forms.Textarea(attrs={'placeholder': _('Definition')}),
                                  required=True)
     is_known = forms.BooleanField(label=_('Is known'),
                                   required=False,

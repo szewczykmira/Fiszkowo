@@ -7,6 +7,9 @@
     <li>
         <a class="page-scroll" href="{% url 'add_category' %}">Add category</a>
     </li>
+    <li>
+        <a class="page-scroll" href="{% url 'add_fiszka' %}">Add fiszka</a>
+    </li>
 {% endblock %}
 
 {% block fiszka %}
@@ -37,11 +40,12 @@
 
                         {% endfor %}
                         <li class="timeline-inverted">
+                            <a href="{% url 'add_category' %}"
                             <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
+                                <h4>Add
+                                    <br>Category</h4>
                             </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
