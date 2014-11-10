@@ -19,25 +19,12 @@ def home(request):
     :return:
     """
 
-    ret = {}
-    ret['categories'] = Category.objects.all()
+    ret = {'categories': Category.objects.all(),
+           'form': CategoryForm(request.POST or None)}
 
+    if request.method == 'POST' and ret['form'].is_valid():
+        ret['form'].save()
     return render(request, 'fiszki/home.html', ret)
-
-
-def add_category(request):
-    """
-    Function for adding categories to app
-    :param request:
-    :return:
-    """
-    ret = {'form': CategoryForm(request.POST or None)}
-
-    if request.method == 'POST':
-        if ret['form'].is_valid():
-            ret['form'].save()
-            return redirect(reverse('home'))
-    return render(request, 'fiszki/add_category.html', ret)
 
 
 def display_fiszka_for_category(request,cat_id):
