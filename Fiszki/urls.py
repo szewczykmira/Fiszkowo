@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-from views import home, add_category, edit_fiszka, about_author, delete_category, display_fiszka_for_category
+from views import home, add_category, edit_fiszka, about_author, display_fiszka_for_category
 
 urlpatterns = patterns('',
     # Examples:
