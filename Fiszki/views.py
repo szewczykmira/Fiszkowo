@@ -27,7 +27,7 @@ def home(request):
     return render(request, 'fiszki/home.html', ret)
 
 
-def display_fiszka_for_category(request,cat_id):
+def display_fiszka_for_category(request, cat_id):
     """
 
     :param request:

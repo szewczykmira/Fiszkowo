@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Fiszki',
+    'dictionary',
 )
 
 MIDDLEWARE_CLASSES = (
