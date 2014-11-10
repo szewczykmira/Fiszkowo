@@ -40,6 +40,17 @@ def add_category(request):
     return render(request, 'fiszki/add_category.html', ret)
 
 
+def display_fiszka_for_category(request,cat_id):
+    """
+
+    :param request:
+    :return:
+    """
+    ret = {'category': get_object_or_404(Category, pk=cat_id)}
+    ret['fiszka'] = Fiszka.objects.filter(cat=ret['category']).order_by('?')[0]
+    return render(request, 'fiszki/display_fiszka.html', ret)
+
+
 def edit_fiszka(request):
     """
     Function for adding or editing fiszka to app
@@ -53,36 +64,6 @@ def edit_fiszka(request):
             ret['form'].save()
             return redirect(reverse('home'))
     return render(request, 'fiszki/add_fiszka.html', ret)
-
-
-def delete_category(request):
-    """
-    Function for deleting category from app
-    :param request:
-    :return:
-    """
-    return render(request, 'fiszki/delete_category.html')
-
-
-def delete_fiszka(request):
-    """
-    Function for deleting fiszka from app
-    :param request:
-    :return:
-    """
-    return render(request, 'fiszki/delete_fiszka.html')
-
-
-def display_fiszka(request, fiszka_id):
-    """
-    Display fiszka with pk = fiszka_id
-    :param request:
-    :param fiszka_id:
-    :return:
-    """
-    ret = {'fiszka': get_object_or_404(Fiszka, pk=fiszka_id)}
-
-    return render(request, 'fiszki/display_fiszka.html', ret)
 
 
 def about_author(request):
