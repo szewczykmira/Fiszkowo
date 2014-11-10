@@ -47,7 +47,7 @@ def display_fiszka_for_category(request,cat_id):
     :return:
     """
     ret = {'category': get_object_or_404(Category, pk=cat_id)}
-    ret['fiszka'] = Fiszka.objects.filter(cat=ret['category']).order_by('?')[0]
+    ret['fiszka'] = Fiszka.objects.filter(cat=ret['category']).filter(is_known=False).order_by('?')[0]
     if request.method == 'POST':
         ret['fiszka'].is_known = True
         ret['fiszka'].save(update_fields=['is_known'])
@@ -67,12 +67,3 @@ def edit_fiszka(request):
             ret['form'].save()
             return redirect(reverse('home'))
     return render(request, 'fiszki/add_fiszka.html', ret)
-
-
-def about_author(request):
-    """
-    Display info about creator of this project
-    :param request:
-    :return:
-    """
-    return render(request, 'fiszki/about_author.html')
