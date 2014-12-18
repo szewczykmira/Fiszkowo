@@ -6,11 +6,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-
-.text-muted {
-    color: #777;
+    font-family: "Roboto Slab",Helvetica,Arial,sans-serif;
 }
 
 .text-primary {
@@ -176,14 +172,14 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fed136;
+    color: #262626;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #fec503;
+    color: #565656;
 }
 
 .navbar-default .navbar-collapse {
@@ -209,13 +205,13 @@ fieldset[disabled] .btn-xl.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #fff;
+    color: #353535;
 }
 
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: #fed136;
+    color: #565656;
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -253,7 +249,7 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #222;
+        background-color: #fff;
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
@@ -771,6 +767,8 @@ ul.social-buttons li a:active {
 .portfolio-modal .modal-content {
     padding: 100px 0;
     min-height: 100%;
+    width: 75%;
+    margin: auto;
     border: 0;
     border-radius: 0;
     text-align: center;
