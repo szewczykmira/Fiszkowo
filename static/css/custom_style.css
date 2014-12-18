@@ -3,7 +3,6 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  * #295F62
- * #377E7E
  */
 
 body {
@@ -12,7 +11,7 @@ body {
 }
 
 .text-primary {
-    color: #fed136;
+    color: #377E7E;
 }
 
 p {
@@ -33,14 +32,14 @@ a.active {
 }
 
 a {
-    color: #fed136;
+    color: #377E7E;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #fec503;
+    color: #295F62;
 }
 
 h1,
@@ -67,12 +66,12 @@ h6 {
 }
 
 .btn-primary {
-    border-color: #fed136;
+    border-color: #377E7E;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: #fed136;
+    background-color: #377E7E;
 }
 
 .btn-primary:hover,
@@ -82,7 +81,7 @@ h6 {
 .open .dropdown-toggle.btn-primary {
     border-color: #f6bf01;
     color: #fff;
-    background-color: #fec503;
+    background-color: #295F62;
 }
 
 .btn-primary:active,
@@ -106,25 +105,25 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: #377E7E;
+    background-color: #377E7E;
 }
 
 .btn-primary .badge {
-    color: #fed136;
+    color: #377E7E;
     background-color: #fff;
 }
 
 .btn-xl {
     padding: 20px 40px;
-    border-color: #fed136;
+    border-color: #377E7E;
     border-radius: 3px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: #fed136;
+    background-color: #377E7E;
 }
 
 .btn-xl:hover,
@@ -134,7 +133,7 @@ fieldset[disabled] .btn-primary.active {
 .open .dropdown-toggle.btn-xl {
     border-color: #f6bf01;
     color: #fff;
-    background-color: #fec503;
+    background-color: #295F62;
 }
 
 .btn-xl:active,
@@ -158,18 +157,18 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: #377E7E;
+    background-color: #377E7E;
 }
 
 .btn-xl .badge {
-    color: #fed136;
+    color: #377E7E;
     background-color: #fff;
 }
 
 .navbar-default {
     border-color: transparent;
-    background-color: #222;
+    background-color: #fff;
 }
 
 .navbar-default .navbar-brand {
@@ -189,8 +188,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: #377E7E;
+    background-color: #377E7E;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -199,7 +198,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #fed136;
+    background-color: #377E7E;
 }
 
 .navbar-default .nav li a {
@@ -491,7 +490,7 @@ section h3.section-subheading {
     border-radius: 100%;
     text-align: center;
     color: #fff;
-    background-color: #fed136;
+    background-color: #377E7E;
 }
 
 .timeline>li .timeline-image h4 {
@@ -678,7 +677,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-    border-color: #fed136;
+    border-color: #377E7E;
     box-shadow: none;
 }
 
@@ -756,7 +755,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #fed136;
+    background-color: #377E7E;
 }
 
 .btn:focus,
@@ -841,12 +840,12 @@ ul.social-buttons li a:active {
 
 ::-moz-selection {
     text-shadow: none;
-    background: #fed136;
+    background: #377E7E;
 }
 
 ::selection {
     text-shadow: none;
-    background: #fed136;
+    background: #377E7E;
 }
 
 img::selection {
@@ -858,5 +857,5 @@ img::-moz-selection {
 }
 
 body {
-    webkit-tap-highlight-color: #fed136;
+    webkit-tap-highlight-color: #377E7E;
 }
