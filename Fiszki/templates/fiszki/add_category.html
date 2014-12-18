@@ -6,7 +6,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                   <form role="form" action="{% url 'home' %}" method="POST" class="navbar-form">
+                   <form role="form" action="{% url 'home' %}" method="POST" class="navbar-form text-center">
                         {% csrf_token %}
                         <div class="input-group">
                             {{ form.name }}

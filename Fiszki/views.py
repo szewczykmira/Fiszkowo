@@ -29,15 +29,17 @@ def home(request):
 
 def display_fiszka_for_category(request, cat_id):
     """
-
     :param request:
     :return:
     """
     ret = {'category': get_object_or_404(Category, pk=cat_id)}
-    ret['fiszka'] = Fiszka.objects.filter(cat=ret['category']).filter(is_known=False).order_by('?')[0]
+    fiszka = ret['category'].fiszka_set.filter(is_known=False).order_by('?')
+    if fiszka:
+        ret['fiszka'] = fiszka[0]
     if request.method == 'POST':
         ret['fiszka'].is_known = True
         ret['fiszka'].save(update_fields=['is_known'])
+        redirect('display_cat', cat_id=ret['category'].pk)
     return render(request, 'fiszki/display_fiszka.html', ret)
 
 

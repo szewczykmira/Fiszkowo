@@ -5,7 +5,7 @@
         <a class="page-scroll" href="{% url 'home' %}#categories">Categories</a>
     </li>
     <li>
-        <a class="page-scroll" href="{% url 'add_category' %}">Add category</a>
+        <a class="page-scroll" href="{% url 'home' %}#add_category">Add category</a>
     </li>
     <li>
         <a class="page-scroll" href="{% url 'add_fiszka' %}">Add fiszka</a>
@@ -20,18 +20,25 @@
                 <div class="col-lg-12 text-center">
                     <h1 class="section-heading">
                         {{ fiszka.name }}
-                        <a href="{% url 'display_cat' category.id %}" class="btn btn-primary btn-lg">Next</a>
                     </h1>
                 </div>
             </div>
             <div class="row" id="definition">
                 <div class="col-lg-12 text-center">
-                    {{ fiszka.definition }}
-                    <br />
+                    <p class="text-muted large">
+                        {{ fiszka.definition }}
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-6">
                     <form action="{% url 'display_cat' category.id %}" method="POST">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-success btn-lg">I know it!</button>
+                        <button type="submit" class="btn btn-primary btn-lg">I know it!</button>
                     </form>
+                </div>
+                <div class="col-lg-6">
+                    <a href="{% url 'display_cat' category.id %}" class="btn btn-primary btn-lg">Next</a>
                 </div>
             </div>
         </div>
@@ -39,7 +46,9 @@
          <div class="container">
          <div class="row">
              <div class="col-lg-12 text-center">
-                 There is no fiszkas in this category
+                 <h2 class="section-heading text-danger">
+                     This category is empty.
+                 </h2>
              </div>
          </div>
          </div>

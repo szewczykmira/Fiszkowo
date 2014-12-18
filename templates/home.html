@@ -14,9 +14,6 @@
     <li>
         <a class="page-scroll" href="#team">Team</a>
     </li>
-    <li>
-        <a class="page-scroll" href="#contact">Contact</a>
-    </li>
 {% endblock %}
 
 {% block content %}
@@ -82,7 +79,10 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
-                        Lorem ipsum
+                        <p class="large text-muted">
+                            Website was created in educational purposes. Serverside was created in django 1.6.
+                            In future website will contain many little modules that help you study.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                             <p class="item-intro text-muted">Easy way to study new definition.</p>
                             <img class="img-responsive" src="static/img/portfolio/roundicons-free.png" alt="">
                             <p>Application that helps you learn new definition using fiche</p>
-                            <a class="btn btn-primary" href="{% url 'home' %}"><i class="fa fa-times"></i>Go to</a>
+                            <a class="btn btn-primary" href="{% url 'home' %}"><i class="fa fa-arrow-right"></i>Go to</a>
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                             <p class="item-intro text-muted">Helps you understand what Płoski mean.</p>
                             <img class="img-responsive img-centered" src="static/img/dictionary.jpg" alt="">
                             <p>Helps you understand what Płoski mean translating definitions</p>
-                            <a class="btn btn-primary" href="{% url 'dictionary_home' %}"><i class="fa fa-times"></i> Close Project</a>
+                            <a class="btn btn-primary" href="{% url 'dictionary_home' %}"><i class="fa fa-arrow-right"></i> Go to</a>
                         </div>
                     </div>
                 </div>
