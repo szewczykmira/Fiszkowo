@@ -6,12 +6,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                   <form role="form" action="{% url 'home' %}" method="POST" class="navbar-form text-center">
+                   <form id='addCat' role="form" action="{% url 'save_category' %}" method="POST" class="navbar-form text-center">
                         {% csrf_token %}
                         <div class="input-group">
                             {{ form.name }}
                             <div class="input-group-btn">
-                                <button class="btn btn-primary" type="submit">Submit</button>
+                                <button class="btn btn-primary" type="button" id="formSubmit">Submit</button>
                             </div>
                         </div>
                     </form>

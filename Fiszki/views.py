@@ -6,11 +6,12 @@ author: Mira Szewczyk <szewczyk.mira@gmail.com>
 """
 
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseForbidden
 from django.core.urlresolvers import reverse
 
 from .models import Category, Fiszka
 from .forms import CategoryForm, FiszkaForm
-
+import json
 
 def home(request):
     """
@@ -18,13 +19,18 @@ def home(request):
     :param request:
     :return:
     """
-
     ret = {'categories': Category.objects.all(),
-           'form': CategoryForm(request.POST or None)}
-
-    if request.method == 'POST' and ret['form'].is_valid():
-        ret['form'].save()
+           'form': CategoryForm()}
     return render(request, 'fiszki/home.html', ret)
+
+
+def save_category(request):
+    if request.method == 'POST' and request.is_ajax(): 
+        form = CategoryForm(request.POST)
+        cat = form.save()
+        n_url = reverse('display_cat', kwargs={'cat_id': cat.id})
+        return HttpResponse(json.dumps({'n_url': n_url, 'name': cat.name}), mimetype="application/json")
+    return HttpResponseForbidden('Possible only by post ajax request')
 
 
 def display_fiszka_for_category(request, cat_id):
