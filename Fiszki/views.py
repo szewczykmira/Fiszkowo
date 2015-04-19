@@ -29,7 +29,7 @@ def save_category(request):
         form = CategoryForm(request.POST)
         cat = form.save()
         n_url = reverse('display_cat', kwargs={'cat_id': cat.id})
-        return HttpResponse(json.dumps({'n_url': n_url, 'name': cat.name}), mimetype="application/json")
+        return HttpResponse(json.dumps({'n_url': n_url, 'name': cat.name}), content_type="application/json")
     return HttpResponseForbidden('Possible only by post ajax request')
 
 
