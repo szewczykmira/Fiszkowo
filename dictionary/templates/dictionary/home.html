@@ -20,23 +20,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
+                <div class="col-lg-8 col-lg-offset-1">
+                  <table class='table table-hover'>
+                    <thead>
+                      <tr>
+                        <th> Słowo </th>
+                        <th> Definicja </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% if articles %}
                         {% for article in articles %}
-
-                        <li class="{% cycle 'timeline-inverted' '' %} text-muted large">
-                            <div class="timeline-image">
-                                {{ article.article }}
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-body">
-                                    {{ article.definition }}
-                                </div>
-                            </div>
-                        </li>
-
+                        <tr>
+                          <td> {{ article.article }} </td>
+                          <td> {{ article.definition }} </td>
+                        </tr>
                         {% endfor %}
-                    </ul>
+                      {% else %}
+                      <tr>
+                        <td colspan="2"> Brak danych </td>
+                      </tr>
+                      {% endif %}
+                      </tbody>
+                  </table>
                 </div>
             </div>
         </div>
