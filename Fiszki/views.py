@@ -30,9 +30,11 @@ def save_category(request):
         if form.is_valid():
             cat = form.save()
             n_url = reverse('display_cat', kwargs={'cat_id': cat.id})
-            return HttpResponse(json.dumps({'n_url': n_url, 'name': cat.name}), content_type="application/json")
+            return HttpResponse(json.dumps({'n_url': n_url, 'name': cat.name}),
+                    content_type="application/json")
         else:
-            return HttpResponse(json.dumps({'error': 'Invalid data'}), content_type="application/json")
+            return HttpResponse(json.dumps({'error': 'Invalid data'}),
+                    content_type="application/json")
     return HttpResponseForbidden('Possible only by post ajax request')
 
 

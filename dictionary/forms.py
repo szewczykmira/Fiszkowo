@@ -17,12 +17,14 @@ class ArticleForm(forms.ModelForm):
 
     article = forms.CharField(label=_('Article'),
                               required=True,
-                              widget=forms.TextInput(attrs={'placeholder': _('Article'),
-                                                            'class': 'form-control'}))
+                              widget=forms.TextInput(attrs={'placeholder':
+                                  _('Article'),
+                                  'class': 'form-control'}))
     definition = forms.CharField(label=_('Definition'),
                                  required=True,
-                                 widget=forms.TextInput(attrs={'placeholder': _('Definition'),
-                                                               'class': 'form-control'}))
+                                 widget=forms.TextInput(attrs={'placeholder':
+                                     _('Definition'),
+                                     'class': 'form-control'}))
 
     class Meta:
         model = Article
